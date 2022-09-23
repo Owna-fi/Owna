@@ -1,0 +1,58 @@
+.mintNft {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #eff0f0;
+  padding: 40px 0;
+}
+.iconAndContainer {
+  display: flex;
+  align-items: flex-start;
+}
+.titleAndText {
+  padding-left: 20px;
+}
+.title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  color: #304050;
+}
+.text {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+
+  color: #5c6670;
+}
+.plusWrapper {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #aeb3b7;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+}
+.plus {
+  color: #c44481;
+  font-size: 24px;
+}
+.unlock {
+  border: none;
+}
+.buttonContainer {
+  margin-top: 100px;
+}

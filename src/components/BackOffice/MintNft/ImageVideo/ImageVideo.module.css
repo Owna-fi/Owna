@@ -1,0 +1,28 @@
+.heading {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #304050;
+  padding-bottom: 8px;
+}
+.headingAndPhoto {
+  padding: 10px 0;
+}
+.photoContainer {
+  width: 350px;
+  height: 160px;
+  border: 1px dashed #aeb3b7;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 400px) {
+  .photoContainer {
+    width: 100%;
+  }
+}
