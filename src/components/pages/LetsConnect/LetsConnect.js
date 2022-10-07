@@ -1,5 +1,7 @@
 import React from "react";
 
+import InlineWidget from "react-calendly";
+
 import Button from "../../Button/Button";
 
 import styles from "./LetsConnect.module.css";
