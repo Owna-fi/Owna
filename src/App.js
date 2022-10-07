@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header/Header";
-import Home from "./components/pages/Home/Home";
+import MyProfile from "./components/pages/MyProfile/MyProfile";
 import AppointeMentInfo from "./components/pages/AppointmentInfo/AppointeMentInfo";
 import LetsConnect from "./components/pages/LetsConnect/LetsConnect";
 import WhatAreYouWillingTodo from "./components/pages/WhatAreYouWillingTodo/WhatAreYouWillingTodo";
@@ -14,14 +15,18 @@ import MintNft from "./components/BackOffice/MintNft/MintNft";
 import Calim from "./components/pages/Calim/Calim";
 import BackOfficeEstimate from "./components/BackOffice/BackOfficeEstimate/BackOfficeEstimate";
 import SendOffer from "./components/BackOffice/SendOffer/SendOffer";
+import FrontPage from "./components/pages/FrontPage/FrontPage";
 
 function App() {
   return (
     <>
-      <Router>
+      <>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          {" "}
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/myProfile" element={<MyProfile />}></Route>
           <Route
             path="/whatareyouwillingtodo"
             element={<WhatAreYouWillingTodo />}
@@ -42,7 +47,7 @@ function App() {
           <Route path="/sendestimate" element={<BackOfficeEstimate />} />
           <Route path="/sendoffer" element={<SendOffer />} />
         </Routes>
-      </Router>
+      </>
     </>
   );
 }

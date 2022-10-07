@@ -4,8 +4,17 @@
   align-items: center;
   flex-direction: column;
   padding: 170px 0;
+  width: 100%;
 }
-
+.dashboard2 {
+  padding-top: 50px;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 .title {
   font-style: italic;
   margin: 0;
@@ -42,9 +51,47 @@
   letter-spacing: 0.01em;
   color: #808080;
 }
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid #eff0f0;
+  padding-bottom: 50px;
+}
+.textContainer {
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 700px;
+
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+}
+.myText {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #0d1a26;
+  text-align: left;
+  padding: 0 15px;
+}
+@media only screen and (max-width: 1399px) {
+  .dashboard2 {
+    width: 90%;
+  }
+}
 @media only screen and (max-width: 767px) {
   .dashboard {
     padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .buttonContainer {
+    gap: 15px;
   }
 }
 @media only screen and (max-width: 575px) {

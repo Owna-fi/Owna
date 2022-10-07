@@ -1,7 +1,6 @@
 .p2pOffer {
   width: 1100px;
   margin: 0 auto;
-  padding: 100px 0;
 }
 @media only screen and (max-width: 1600px) {
   .p2pOffer {

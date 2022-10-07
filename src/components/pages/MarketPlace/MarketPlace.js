@@ -2,6 +2,7 @@ import React from "react";
 import MarketPlaceComponents from "./MarketPlaceComponents/MarketPlaceComponents";
 import borrower from "../../../images/borrower.png";
 import styles from "./MarketPlace.module.css";
+import Heading from "../../Heading/Heading";
 
 const MarketPlace = () => {
   const data = [
@@ -72,7 +73,11 @@ const MarketPlace = () => {
   ];
   return (
     <section className={styles.marketPlace}>
-      {" "}
+      <Heading
+        title="Lend "
+        text="Offer loans to other users on their no-fungible tokens"
+        padding
+      />
       {data.map((el, i) => (
         <MarketPlaceComponents data={el} key={i}></MarketPlaceComponents>
       ))}

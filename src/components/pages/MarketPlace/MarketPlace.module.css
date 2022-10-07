@@ -1,7 +1,6 @@
 .marketPlace {
   width: 950px;
   margin: 0 auto;
-  padding: 100px 0;
 }
 @media only screen and (max-width: 1050px) {
   .marketPlace {

@@ -1,5 +1,6 @@
 import React from "react";
 import P2pComponents from "./P2pComponents/P2pComponents";
+import Heading from "../../Heading/Heading";
 import styles from "./P2poffer.module.css";
 
 const P2poffer = () => {
@@ -38,11 +39,18 @@ const P2poffer = () => {
     },
   ];
   return (
-    <section className={` ${styles.p2pOffer}`}>
-      {p2poffer.map((el, i) => (
-        <P2pComponents data={el} key={i} />
-      ))}
-    </section>
+    <>
+      <section className={` ${styles.p2pOffer}`}>
+        <Heading
+          padding
+          title="Borrow"
+          text="Access to peer to peer loan offers with your NFT"
+        />
+        {p2poffer.map((el, i) => (
+          <P2pComponents data={el} key={i} />
+        ))}
+      </section>
+    </>
   );
 };
 

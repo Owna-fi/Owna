@@ -3,6 +3,7 @@ import CalimComponents from "./CalimComponents";
 import usdtIcon from "../../../images/usdt.svg";
 import onaIcon from "../../../images/ona.svg";
 import styles from "./Calim.module.css";
+import Heading from "../../Heading/Heading";
 
 const Claim = () => {
   const data = [
@@ -24,11 +25,20 @@ const Claim = () => {
     },
   ];
   return (
-    <section className={styles.claim}>
-      {data.map((el, i) => (
-        <CalimComponents {...el} key={i} />
-      ))}
-    </section>
+    <>
+      <section className={styles.claim}>
+        {" "}
+        <Heading
+          title="Claim"
+          text="Unstake your liquidity and claim your rewards"
+        />
+        <div className={styles.componentswrapper}>
+          {data.map((el, i) => (
+            <CalimComponents {...el} key={i} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

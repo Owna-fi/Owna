@@ -4,6 +4,7 @@ import usdtIcon from "../../../images/usdt.svg";
 import onaIcon from "../../../images/ona.svg";
 import StakeComponents from "./StakeComponents/StakeComponents";
 import { useState } from "react";
+import Heading from "../../Heading/Heading";
 
 const Stake = () => {
   const [usdModal, setUsdModal] = useState();
@@ -40,9 +41,15 @@ const Stake = () => {
   ];
   return (
     <section className={styles.stake}>
-      {data.map((el, i) => (
-        <StakeComponents {...el} key={i} />
-      ))}
+      <Heading
+        title="Stake"
+        text="Deposit liquidity in Owna's Pool to earn interests"
+      />
+      <div className={styles.componentswrapper}>
+        {data.map((el, i) => (
+          <StakeComponents {...el} key={i} />
+        ))}
+      </div>
     </section>
   );
 };

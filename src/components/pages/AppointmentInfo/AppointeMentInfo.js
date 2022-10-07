@@ -5,31 +5,23 @@ import Input from "../../Input/Input";
 import UploadingPhoto from "./UploadingPhoto/UploadingPhoto";
 import CheckBox from "../../Checkbox/CheckBox";
 import Button from "../../Button/Button";
+import { BsChevronUp, BsChevronDown } from "react-icons/bs";
+import imageLogo from "../../../images/imageLogo.svg";
 import styles from "./AppointmentInfo.module.css";
 
 const AppointeMentInfo = () => {
   const [rightAsset, setRightAsset] = useState(false);
   const [notFake, setNotFake] = useState(false);
+  const [category, setCategory] = useState("");
+
+  const [categoryVisible, setCategoryVisible] = useState(false);
+  const [photo, setPhoto] = useState(null);
   const [values, setValues] = useState({
-    category: "",
     origin: "",
     size: "",
     stateoftheassest: "",
   });
-
   const inputs = [
-    {
-      label: "Category",
-      type: "text",
-      name: "category",
-      placeholder: "John Doe",
-    },
-    {
-      label: "Origin",
-      type: "text",
-      name: "origin",
-      placeholder: "John Doe",
-    },
     {
       label: "Size",
       type: "text",
@@ -41,17 +33,83 @@ const AppointeMentInfo = () => {
       label: "State of the Asset",
       type: "text",
       name: "stateoftheassest",
+
       placeholder: "john.doe@awsamplify.com",
     },
   ];
+  const categories = [
+    "Watch",
+    "Jewelry",
+    "Stone",
+    "Gold",
+    "Paintings & Photos",
+  ];
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
+  };
+  const uploadPhoto = (e) => {
+    setPhoto(e.target.files[0]);
   };
   return (
     <section className={`wrapper ${styles.wrapper}`}>
       <h1 className="title">
         What asset are willing to bring to your appointment?
       </h1>
+
+      <p className={styles.label}>Category</p>
+      <div className={styles.categoyContainer}>
+        <div className={styles.dropdownAndIcon}>
+          <p className={styles.category}>
+            {category ? (
+              category
+            ) : (
+              <span className={styles.placeholeder}>Select</span>
+            )}
+          </p>
+          {categoryVisible ? (
+            <BsChevronUp
+              className={styles.arrow}
+              onClick={() => setCategoryVisible((prev) => !prev)}
+            />
+          ) : (
+            <BsChevronDown
+              className={styles.arrow}
+              onClick={() => setCategoryVisible((prev) => !prev)}
+            />
+          )}
+        </div>
+        {categoryVisible && (
+          <div className={styles.categories}>
+            {categories.map((el, i) => (
+              <p
+                className={styles.categoryItem}
+                key={i}
+                onClick={() => {
+                  setCategory(el);
+                  setCategoryVisible((prev) => !prev);
+                }}
+              >
+                {el}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
+      <div className={styles.originContainer}>
+        <p className={styles.label}>Origin</p>
+        <div className={styles.photoContainer}>
+          <label htmlFor="photo">
+            <img src={imageLogo} alt="#" className={styles.imageLogo} />
+          </label>
+
+          <input
+            id="photo"
+            type="file"
+            onChange={uploadPhoto}
+            className={styles.inputFile}
+          />
+        </div>
+      </div>
       {inputs.map((input, i) => (
         <Input
           {...input}
@@ -60,6 +118,7 @@ const AppointeMentInfo = () => {
           onChange={onChange}
         />
       ))}
+
       <UploadingPhoto />
       <div className={styles.checkBoxContainer}>
         {" "}

@@ -4,9 +4,9 @@ import { useDataContext } from "../../../context/context";
 import Button from "../../Button/Button";
 import CheckBox from "../../Checkbox/CheckBox";
 import Input from "../../Input/Input";
-import styles from "./Home.module.css";
+import styles from "./MyProfile.module.css";
 
-const Home = () => {
+const MyProfile = () => {
   const { scrollTotop } = useDataContext();
   const [checked, setChecked] = useState(false);
 
@@ -86,4 +86,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MyProfile;

@@ -1,5 +1,5 @@
 .header {
-  width: 1200px;
+  width: 100%;
   padding: 20px 0;
   margin: 0 auto;
   display: flex;
@@ -82,7 +82,7 @@
   border-radius: 5px;
   padding: 5px;
   position: absolute;
-  z-index: 1;
+  z-index: 200 !important;
 
   top: 35px;
   min-width: 100%;
@@ -113,10 +113,10 @@
 }
 @media screen and (max-width: 1399px) {
   .header {
-    width: 90%;
+    width: 100;
   }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1199px) {
   .navWrapper {
     flex-direction: column;
     position: absolute;

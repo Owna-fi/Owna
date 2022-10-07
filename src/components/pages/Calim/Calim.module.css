@@ -1,13 +1,17 @@
 .claim {
   display: flex;
   justify-content: center;
+
+  flex-direction: column;
+  width: 800px;
+  margin: 0 auto;
+}
+.componentswrapper {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  padding-top: 200px;
-  padding-bottom: 100px;
   gap: 35px;
 }
-
 .wrapper {
   width: 400px;
 }
@@ -127,6 +131,9 @@
 
 @media only screen and (max-width: 991px) {
   .claim {
+    width: 90%;
+  }
+  .componentswrapper {
     flex-direction: column;
   }
 }

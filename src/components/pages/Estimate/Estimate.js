@@ -3,6 +3,7 @@ import Button from "../../Button/Button";
 import { useDataContext } from "../../../context/context";
 import styles from "./Estimate.module.css";
 import { useNavigate } from "react-router-dom";
+import EstimateModal from "./EstimateModal/EstimateModal";
 
 const Estimate = () => {
   const [estimationCompleted, setEstimationCompleted] = useState();
@@ -53,26 +54,7 @@ const Estimate = () => {
         </>
       )}
       {estimationCompleted && (
-        <>
-          <h1 className={`title ${styles.title}`}>Hello there!</h1>
-          <p className={`text ${styles.text}`}>
-            “Congratulations! You have received your estimation.”
-          </p>
-          <p className={`text ${styles.text} ${styles.letsGo}`}>Let’s go!</p>
-          <p className={`text ${styles.text}`}>Now, what’s next?</p>
-          <p className={`text ${styles.text}`}>
-            We are going to create the NFT for your asset in our lab.
-          </p>
-          <p className={`text ${styles.text}`}>
-            {" "}
-            All photos and details are going to be inserted by
-            <br className={styles.br} /> professionals and experts.
-          </p>
-          <p className={`text ${styles.text}`}></p>{" "}
-          <p className={`text ${styles.text}`}>
-            You will shortly be noticed by email when it is ready!
-          </p>
-        </>
+        <EstimateModal setPopup={setEstimationCompleted} />
       )}
     </section>
   );
