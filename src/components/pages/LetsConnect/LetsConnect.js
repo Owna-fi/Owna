@@ -1,6 +1,6 @@
 import React from "react";
 
-import InlineWidget from "react-calendly";
+import { InlineWidget } from "react-calendly";
 
 import Button from "../../Button/Button";
 
