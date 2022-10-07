@@ -10,10 +10,8 @@ const LetsConnect = () => {
       <h1 className="title">Let’s Connect</h1>
       <p className="text">Book below if you need assitance</p>
       <div className={styles.letsConnect}>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/ownafinance/30min" style="min-width:320px;height:630px;"></div>  
-     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <InlineWidget url="https://calendly.com/ownafinance/30min" />
       </div>
-
       <div className={styles.buttonContainer}>
         <Button>Book</Button>
       </div>
