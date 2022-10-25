@@ -15,6 +15,8 @@ const AppointeMentInfo = () => {
   const [category, setCategory] = useState("");
 
   const [categoryVisible, setCategoryVisible] = useState(false);
+  const [assetState, setAssetState] = useState("");
+  const [assetStateVisible, setAssetStateVisible] = useState(false);
   const [photo, setPhoto] = useState(null);
   const [values, setValues] = useState({
     origin: "",
@@ -43,6 +45,13 @@ const AppointeMentInfo = () => {
     "Stone",
     "Gold",
     "Paintings & Photos",
+  ];
+  const assetStateData = [
+    "Brand New",
+    "Excellent",
+    "VeryGood",
+    "Moderate",
+    "Bad",
   ];
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -97,7 +106,7 @@ const AppointeMentInfo = () => {
       </div>
       <div className={styles.originContainer}>
         <p className={styles.label}>Origin</p>
-        <div className={styles.photoContainer}>
+        {/* <div className={styles.photoContainer}>
           <label htmlFor="photo">
             <img src={imageLogo} alt="#" className={styles.imageLogo} />
           </label>
@@ -108,16 +117,61 @@ const AppointeMentInfo = () => {
             onChange={uploadPhoto}
             className={styles.inputFile}
           />
-        </div>
+        </div> */}
+        <label htmlFor="id" className={styles.button}>
+          Upload
+          <input type="file" id="id" className={styles.input} />
+        </label>
       </div>
-      {inputs.map((input, i) => (
-        <Input
-          {...input}
-          key={i}
-          value={values[input.name]}
-          onChange={onChange}
-        />
-      ))}
+
+      <Input
+        label="Size"
+        type="text"
+        name="size"
+        placeholder="John Doe"
+        value={values["size"]}
+        onChange={onChange}
+      />
+
+      <p className={styles.label}>State of the Asset</p>
+      <div className={styles.categoyContainer}>
+        <div className={styles.dropdownAndIcon}>
+          <p className={styles.category}>
+            {assetState ? (
+              assetState
+            ) : (
+              <span className={styles.placeholeder}>Select</span>
+            )}
+          </p>
+          {assetStateVisible ? (
+            <BsChevronUp
+              className={styles.arrow}
+              onClick={() => setAssetStateVisible((prev) => !prev)}
+            />
+          ) : (
+            <BsChevronDown
+              className={styles.arrow}
+              onClick={() => setAssetStateVisible((prev) => !prev)}
+            />
+          )}
+        </div>
+        {assetStateVisible && (
+          <div className={styles.categories}>
+            {assetStateData.map((el, i) => (
+              <p
+                className={styles.categoryItem}
+                key={i}
+                onClick={() => {
+                  setAssetState(el);
+                  setAssetStateVisible((prev) => !prev);
+                }}
+              >
+                {el}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
 
       <UploadingPhoto />
       <div className={styles.checkBoxContainer}>

@@ -58,6 +58,9 @@
 .buttonContainer {
   margin-top: 25px;
   margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 @media only screen and (max-width: 500px) {
   .textContainer {

@@ -175,7 +175,7 @@ export default function MyHome() {
       <footer>
         <div className="text-center py-12">
           <div className="font-bold text-lg">Made with 💖 in Paris 🇫🇷</div>
-          <div className="text-gray-500">© Tokenly</div>
+          <div className="text-gray-500">© Owna</div>
         </div>
       </footer>
     </>

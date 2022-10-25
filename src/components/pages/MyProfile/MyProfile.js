@@ -45,18 +45,18 @@ const MyProfile = () => {
       name: "walletaddress",
       placeholder: "Seattle, WA",
     },
-    {
-      label: "ID",
-      type: "text",
-      name: "id",
-      placeholder: "Seattle, WA",
-    },
-    {
-      label: "Proof of Address",
-      type: "text",
-      name: "proofofaddress",
-      placeholder: "john.doe@awsamplify.comA",
-    },
+    // {
+    //   label: "ID",
+    //   type: "text",
+    //   name: "id",
+    //   placeholder: "Seattle, WA",
+    // },
+    // {
+    //   label: "Proof of Address",
+    //   type: "text",
+    //   name: "proofofaddress",
+    //   placeholder: "john.doe@awsamplify.comA",
+    // },
   ];
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -73,6 +73,23 @@ const MyProfile = () => {
             onChange={onChange}
           />
         ))}
+        <div className={styles.labelContainer}>
+          <label className={`${styles.label} ${styles.text}`}> ID</label>
+          <label htmlFor="id" className={styles.button}>
+            Upload
+            <input type="file" id="id" className={styles.input} />
+          </label>
+        </div>
+        <div className={styles.labelContainer}>
+          <label className={`${styles.label} ${styles.text}`}>
+            {" "}
+            Proof of Address
+          </label>
+          <label htmlFor="id" className={styles.button}>
+            Upload
+            <input type="file" id="id" className={styles.input} />
+          </label>
+        </div>
         <CheckBox
           checked={checked}
           setChecked={setChecked}
