@@ -14,9 +14,10 @@ const LetsConnect = () => {
       <div className={styles.letsConnect}>
         <InlineWidget url="https://calendly.com/ownafinance/30min" />
       </div>
-      {/* <div className={styles.buttonContainer}>
+
+      <div className={styles.buttonContainer}>
         <Button>Book</Button>
-      </div> */}
+      </div>
     </section>
   );
 };
