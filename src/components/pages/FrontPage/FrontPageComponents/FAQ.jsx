@@ -31,13 +31,17 @@ export const FAQ = () => {
     },
     {
       question: "What is the first Step?",
+      // answer: [
+      //   "Jewelry",
+      //   "Watches",
+      //   "Stones",
+      //   "Gold",
+      //   "Paintings & Photos",
+      //   "Cars ",
+      // ],
       answer: [
-        "Jewelry",
-        "Watches",
-        "Stones",
-        "Gold",
-        "Paintings & Photos",
-        "Cars ",
+        "Download a wallet on your cell phone (e.g. Metamask, Trust, Argent) to connect to Owna on the top right hand side.",
+        "By accessing your space you will be able to upload your documents and access the appointment page.",
       ],
     },
     {

@@ -11,13 +11,17 @@ import unlockImage from "../../../images/unlock.svg";
 import styles from "./MintNft.module.css";
 import MySwitch from "./Switch/Switch";
 import LevelsModal from "./Modals/LevelsModal";
+import imageLogo from "../../../images/imageLogo.svg";
 
 const MintNft = () => {
   const [properties, setProperties] = useState(false);
   const [levels, setLevels] = useState(false);
   const [stats, setStats] = useState(false);
   const [unlock, setUnlock] = useState(false);
-
+  const [pdf, setPdf] = useState("");
+  const uploadPhoto = (e) => {
+    setPdf(e.target.files[0]);
+  };
   const formData = [
     {
       label: "First Name",
@@ -118,6 +122,28 @@ const MintNft = () => {
             <MySwitch checked={unlock} setChecked={setUnlock} />
           </div>
         </div>
+      </div>
+      <div className={styles.labelContainer}>
+        <label className={`${styles.label} ${styles.text}`}>
+          {" "}
+          Additional Document
+        </label>
+        {/* <div className={styles.photoContainer}>
+          <label htmlFor="photo">
+            <img src={imageLogo} alt="#" className={styles.imageLogo} />
+          </label>
+
+          <input
+            id="photo"
+            type="file"
+            onChange={uploadPhoto}
+            className={styles.inputFile}
+          />
+        </div> */}
+        <label htmlFor="id" className={styles.button}>
+          Upload
+          <input type="file" id="id" className={styles.input} />
+        </label>
       </div>
       <div className={styles.buttonContainer}>
         <Button>Submit</Button>

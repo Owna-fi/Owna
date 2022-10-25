@@ -53,7 +53,7 @@ export const Hero = () => {
                     </a>
                     .<br />
                     <br />
-                    Once downloaded, you will be able to connect to the Tokenly
+                    Once downloaded, you will be able to connect to the Owna
                     application in the top right corner of your screen.
                   </p>
 

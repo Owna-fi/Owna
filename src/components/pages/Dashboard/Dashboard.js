@@ -5,6 +5,7 @@ import RefundPopup from "./RefundPopup/RefundPopup";
 import SellItemModal from "./SellItemModal/SellItemModal";
 import styles from "./Dashboard.module.css";
 import LendingDashboard from "./LendingDahboardComponent";
+import Heading from "../../Heading/Heading";
 
 const Dashboard = () => {
   const [refundpopup, setRefundPopup] = useState(false);
@@ -12,7 +13,11 @@ const Dashboard = () => {
   return (
     <>
       <section className={` ${styles.dashboard}`}>
-        <h2 className={`title ${styles.title}`}>Borrowing Dashboard</h2>
+        <div className={styles.dashboard2}>
+          {" "}
+          <Heading title="Dashboard" noPadding />
+        </div>
+        {/* <h2 className={`title ${styles.title}`}>Dashboard</h2> */}
         <p className={`text ${styles.text}`}>
           Your outstanding loan is{" "}
           <span className={styles.amount}> 5446 USDT</span>

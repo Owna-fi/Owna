@@ -27,7 +27,7 @@ const UploadingPhoto = ({ title }) => {
       {photoData.map((el, i) => (
         <div key={i} className={styles.headingAndPhoto}>
           <h3 className={styles.heading}>{el.title}</h3>
-          <div className={styles.photoContainer}>
+          {/* <div className={styles.photoContainer}>
             <label htmlFor="photo">
               <img src={imageLogo} alt="#" className={styles.imageLogo} />
             </label>
@@ -38,7 +38,11 @@ const UploadingPhoto = ({ title }) => {
               onChange={uploadPhoto}
               className={styles.inputFile}
             />
-          </div>
+          </div> */}
+          <label htmlFor="id" className={styles.button}>
+            Upload
+            <input type="file" id="id" className={styles.input} />
+          </label>
         </div>
       ))}
     </section>
