@@ -11,6 +11,7 @@ import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { BrowserRouter } from "react-router-dom";
+import ScrollTotop from "./components/ScrollTotop";
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
   [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
@@ -31,6 +32,7 @@ root.render(
   <React.StrictMode>
     {" "}
     <BrowserRouter>
+      <ScrollTotop />
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
           <ContextProvider>

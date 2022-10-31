@@ -44,8 +44,8 @@ const Header = () => {
       to: "myspace",
       navItems: [
         { name: "Marketplace", to: "/marketplace" },
-        { name: "Stake", to: "/stake" },
-        { name: "Claim", to: "/claim" },
+        { name: "Stake & Claim", to: "/stakeandclaim" },
+        // { name: "Claim", to: "/claim" },
       ],
     },
   ];
@@ -86,7 +86,12 @@ const Header = () => {
                   onClick={() => showDropDown(i)}
                   key={i}
                 >
-                  <div key={i} className={styles.navItems}>
+                  <div
+                    key={i}
+                    className={styles.navItems}
+                    onMouseEnter={() => showDropDown(i)}
+                    onMouseLeave={() => showDropDown(i)}
+                  >
                     <p className={styles.navLink}>{item.navItem}</p>{" "}
                     {dropdown && active === i && (
                       <div
