@@ -17,6 +17,7 @@ const Stake = () => {
   const [stakeModal, setStakeModal] = useState(false);
   const { scrollToTop } = useDataContext();
 
+
   const data = [
     {
       percentage: "11.00%",
@@ -29,6 +30,7 @@ const Stake = () => {
       amount: 0,
       amountUSD: 0,
       button: { text: " Unstake USDT" },
+
       dayTitle: "Cooldown period",
       day: 10,
       myModal: <UnStakeModal setPopup={setUnstakeModal} img={usdtIcon} />,
@@ -51,6 +53,7 @@ const Stake = () => {
       myModal: <ClaimModal setPopup={setClaimModal} img={usdtIcon} />,
       modal: claimModal,
       setModal: setClaimModal,
+
     },
   ];
   return (
@@ -66,6 +69,7 @@ const Stake = () => {
         </div>
         <div className={styles.appromaxContainer}>
           <p className={styles.appromax}>Staking APR</p>
+
           <span className={styles.percentage}>9.75%</span>
         </div>
         <div className={styles.appromaxContainer}>
@@ -86,6 +90,7 @@ const Stake = () => {
           >
             <Button>Stake</Button>
           </div>
+
         </div>
       </div>
       <div className={styles.componentswrapper}>
