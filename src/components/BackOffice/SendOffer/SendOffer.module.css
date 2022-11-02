@@ -49,6 +49,7 @@
   border-radius: 5px;
   padding: 7px 12px;
   width: 100%;
+  cursor: pointer;
 }
 .periodInput {
   width: 100%;

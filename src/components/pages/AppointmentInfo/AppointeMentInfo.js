@@ -66,7 +66,10 @@ const AppointeMentInfo = () => {
       </h1>
 
       <p className={styles.label}>Category</p>
-      <div className={styles.categoyContainer}>
+      <div
+        className={styles.categoyContainer}
+        onClick={() => setCategoryVisible((prev) => !prev)}
+      >
         <div className={styles.dropdownAndIcon}>
           <p className={styles.category}>
             {category ? (
@@ -134,7 +137,10 @@ const AppointeMentInfo = () => {
       />
 
       <p className={styles.label}>State of the Asset</p>
-      <div className={styles.categoyContainer}>
+      <div
+        className={styles.categoyContainer}
+        onClick={() => setAssetStateVisible((prev) => !prev)}
+      >
         <div className={styles.dropdownAndIcon}>
           <p className={styles.category}>
             {assetState ? (

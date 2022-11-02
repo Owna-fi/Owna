@@ -41,8 +41,8 @@ function App() {
           <Route path="/p2poffer" element={<P2poffer />} />
           <Route path="/marketplace" element={<MarketPlace />} />{" "}
           <Route path="/dashboard" element={<Dashboard />} />{" "}
-          <Route path="/stake" element={<Stake />} />{" "}
-          <Route path="/claim" element={<Calim />}></Route>
+          <Route path="/stakeandclaim" element={<Stake />} />{" "}
+          {/* <Route path="/claim" element={<Calim />}></Route> */}
           <Route path="/mintnft" element={<MintNft />} />
           <Route path="/sendestimate" element={<BackOfficeEstimate />} />
           <Route path="/sendoffer" element={<SendOffer />} />

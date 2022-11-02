@@ -4,10 +4,7 @@ const StateData = createContext();
 export const ContextProvider = ({ children }) => {
   const [estimateAmount, setEstimateAmount] = useState(null);
   const [backOffice, setBackOffice] = useState(true);
-
-  const [connect, setConnect] = useState(true);
-
-
+  const [connect, setConnect] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

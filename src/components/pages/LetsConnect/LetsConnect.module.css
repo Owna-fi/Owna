@@ -1,6 +1,8 @@
 .letsConnectWrapper {
   width: 650px;
   margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 .letsConnect {
   display: grid;

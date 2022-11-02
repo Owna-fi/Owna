@@ -6,8 +6,10 @@ import styles from "./StakeComponents.module.css";
 import StakeModal from "./StakeModal/StakeModal";
 
 const StakeComponents = ({
-  percentage,
-  getButton,
+  // percentage,
+  // getButton,
+  stake,
+  claim,
   currency,
   amount,
   amountUSD,
@@ -20,7 +22,7 @@ const StakeComponents = ({
   const { scrollToTop } = useDataContext();
   return (
     <section className={styles.wrapper}>
-      <div className={styles.headingAndButton}>
+      {/* <div className={styles.headingAndButton}>
         <h2 className={styles.heading}>{currency}</h2>
         <div>
           <Button background="#E7E7E7" color="#323232">
@@ -36,10 +38,12 @@ const StakeComponents = ({
         <p className={styles.appromax}>
           Staking APR <span className={styles.percentage}>{percentage}</span>
         </p>
-      </div>
+      </div> */}
       <div className={styles.stakeComponents}>
         <h2 className={styles.title}>
-          Staked <span className={styles.stakeCurrency}>{currency}</span>
+          {!stake && !claim && "Unstake"}
+          {claim && "Claim"}{" "}
+          <span className={styles.stakeCurrency}>{currency}</span>
         </h2>
         <div className={styles.amountContainer}>
           <p className={styles.amount}>{amount}</p>

@@ -145,7 +145,10 @@ const SendOffer = () => {
                     {" "}
                     <div className={styles.labelContainer}>
                       <p className={styles.label}>Set Period</p>
-                      <div className={styles.categoyContainer}>
+                      <div
+                        className={styles.categoyContainer}
+                        onClick={() => setPeriodVisible((prev) => !prev)}
+                      >
                         <div className={styles.dropdownAndIcon}>
                           {customPeriod ? (
                             <input
