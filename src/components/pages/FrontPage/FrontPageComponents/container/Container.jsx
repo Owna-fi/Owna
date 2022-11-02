@@ -12,7 +12,8 @@ export const Container = ({
         "bg-white relative pb-4 md:pb-6 px-4 md:px-6": withBorder,
       })}
     >
-      <div className={cx(bgColor, "relative z-10", className)}>
+      <div className={cx(bgColor, "relative", className)}>
+        {/* z-10 */}
         <div className="container mx-auto">{children}</div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { useDataContext } from "../../../../context/context";
 
 import Button from "../../../Button/Button";
 import styles from "./StakeComponents.module.css";
-import StakeModal from "./StakeModal/StakeModal";
+import StakeModal from "../Modal/StakeModal";
 
 const StakeComponents = ({
   // percentage,
@@ -14,8 +14,11 @@ const StakeComponents = ({
   amount,
   amountUSD,
   button,
+  dayTitle,
   day,
-  img,
+  usdt,
+
+  myModal,
   modal,
   setModal,
 }) => {
@@ -58,13 +61,13 @@ const StakeComponents = ({
           <Button width="100%">{button.text}</Button>
         </div>
         <div className={styles.countDown}>
-          <p className={styles.countDownText}>Cooldown period</p>
-          <p className={styles.time}>{day}d</p>
+          <p className={styles.countDownText}>{dayTitle}</p>
+          <p className={styles.time}>
+            {day && `${day} days`} {usdt && `${usdt} USDT`}
+          </p>
         </div>
       </div>{" "}
-      {modal && (
-        <StakeModal setPopup={setModal} currency={currency} img={img} />
-      )}
+      {modal && myModal}
     </section>
   );
 };

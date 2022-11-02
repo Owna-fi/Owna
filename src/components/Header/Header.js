@@ -51,8 +51,11 @@ const Header = () => {
   ];
 
   const showDropDown = (index) => {
-    setDropdown((prev) => !prev);
+    setDropdown(true);
     setActive(index);
+  };
+  const hideDropDown = () => {
+    setDropdown(false);
   };
   React.useEffect(() => {
     if (menuVisible) {
@@ -64,7 +67,7 @@ const Header = () => {
 
   return (
     <Container>
-      <header className={`${pathname === "/" && " Header"} py-3 px-0`}>
+      <header className={`${pathname === "/" && "header "} py-3 px-0`}>
         <nav
           className={cx({
             "h-screen md:h-auto": menuVisible,
@@ -90,13 +93,16 @@ const Header = () => {
                     key={i}
                     className={styles.navItems}
                     onMouseEnter={() => showDropDown(i)}
-                    onMouseLeave={() => showDropDown(i)}
                   >
                     <p className={styles.navLink}>{item.navItem}</p>{" "}
                     {dropdown && active === i && (
                       <div
                         className={styles.dropdown}
-                        onClick={() => setSidebar(false)}
+                        onClick={() => {
+                          setSidebar(false);
+                        }}
+                        onMouseEnter={() => showDropDown(i)}
+                        onMouseLeave={() => hideDropDown()}
                       >
                         {item.navItems.map((el, i) => (
                           <Link

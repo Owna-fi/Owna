@@ -19,7 +19,6 @@
   align-items: flex-end;
   min-width: 100px;
   text-decoration: none;
-  display: block;
   padding: 20px 0;
 }
 .dot {
@@ -85,7 +84,7 @@
   border-radius: 5px;
   padding: 5px;
   position: absolute;
-  z-index: 200 !important;
+  z-index: 10000000000000 !important;
 
   top: 50px;
 
@@ -116,10 +115,12 @@
 
 .backOfficeDropdown {
   top: 50px;
+  width: 100%;
+  left: 50%;
 }
 @media screen and (max-width: 1399px) {
   .header {
-    width: 100;
+    width: 100%;
   }
 }
 @media screen and (max-width: 1199px) {

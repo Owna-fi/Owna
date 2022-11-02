@@ -9,8 +9,13 @@ import styles from "./LetsConnect.module.css";
 const LetsConnect = () => {
   return (
     <section className={` ${styles.letsConnectWrapper}`}>
-      <h1 className="title">Let’s Connect</h1>
-      <p className="text">Book below if you need assitance</p>
+      <h1 className={styles.title}>Let’s Connect</h1>
+      <p className="text pb-4">
+        All collateralized assets should be brought to 1 avenue de
+        l'observatoire 75006 Paris
+      </p>
+      {/* <p className="text">Book below if you need assitance</p> */}
+
       <div className={styles.letsConnect}>
         <InlineWidget url="https://calendly.com/ownafinance/30min" />
       </div>
