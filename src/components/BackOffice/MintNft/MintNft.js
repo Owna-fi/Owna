@@ -19,6 +19,16 @@ const MintNft = () => {
   const [stats, setStats] = useState(false);
   const [unlock, setUnlock] = useState(false);
   const [pdf, setPdf] = useState("");
+  const [values, setValues] = useState({
+    fname: "",
+    email: "",
+    link: "",
+    description: "",
+    walletaddress: "",
+    collection: "",
+    maxcapacity: "maxcapacity",
+    entryfee: "",
+  });
   const uploadPhoto = (e) => {
     setPdf(e.target.files[0]);
   };
@@ -28,6 +38,12 @@ const MintNft = () => {
       type: "text",
       name: "fname",
       placeholder: "John Doe",
+    },
+    {
+      label: "Email",
+      type: "email",
+      name: "email",
+      placeholder: "Enter your Email",
     },
     {
       label: "External Links",
@@ -46,6 +62,18 @@ const MintNft = () => {
       type: "text",
       name: "collection",
       placeholder: "john.doe@awsamplify.com",
+    },
+    {
+      label: "Max borrowing capacity",
+      type: "number",
+      name: "maxcapacity",
+      placeholder: "Max borrowing capacity",
+    },
+    {
+      label: "Entry Fee",
+      type: "number",
+      name: "entryfee",
+      placeholder: "Entry Fee",
     },
   ];
 
@@ -69,6 +97,9 @@ const MintNft = () => {
       setModal: setStats,
     },
   ];
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
   return (
     <div className={`wrapper ${styles.mintNft}`}>
       <h1 className="title">Create New Item</h1>
@@ -81,8 +112,13 @@ const MintNft = () => {
         />
         <ImageVideo />
 
-        {formData.map((el, i) => (
-          <Input {...el} key={i} />
+        {formData.map((input, i) => (
+          <Input
+            {...input}
+            key={i}
+            value={values[input.name]}
+            onChange={onChange}
+          />
         ))}
       </form>
       {info.map((el, i) => (

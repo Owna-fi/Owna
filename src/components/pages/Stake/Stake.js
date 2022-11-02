@@ -6,10 +6,16 @@ import StakeComponents from "./StakeComponents/StakeComponents";
 import { useState } from "react";
 import Heading from "../../Heading/Heading";
 import Button from "../../Button/Button";
+import StakeModal from "./Modal/StakeModal";
+import { useDataContext } from "../../../context/context";
+import UnStakeModal from "./Modal/UnStakeModal";
+import ClaimModal from "./Modal/ClaimModal";
 
 const Stake = () => {
-  const [usdModal, setUsdModal] = useState();
-  const [onadModal, setOnaModal] = useState();
+  const [unstakeModal, setUnstakeModal] = useState(false);
+  const [claimModal, setClaimModal] = useState(false);
+  const [stakeModal, setStakeModal] = useState(false);
+  const { scrollToTop } = useDataContext();
 
   const data = [
     {
@@ -23,9 +29,11 @@ const Stake = () => {
       amount: 0,
       amountUSD: 0,
       button: { text: " Unstake USDT" },
+      dayTitle: "Cooldown period",
       day: 10,
-      modal: usdModal,
-      setModal: setUsdModal,
+      myModal: <UnStakeModal setPopup={setUnstakeModal} img={usdtIcon} />,
+      modal: unstakeModal,
+      setModal: setUnstakeModal,
     },
     {
       percentage: "11.00%",
@@ -38,9 +46,11 @@ const Stake = () => {
       amount: 0,
       amountUSD: 0,
       button: { text: " Claim USDT" },
-      day: 10,
-      modal: onadModal,
-      setModal: setOnaModal,
+      dayTitle: "USDT per month",
+      usdt: "0",
+      myModal: <ClaimModal setPopup={setClaimModal} img={usdtIcon} />,
+      modal: claimModal,
+      setModal: setClaimModal,
     },
   ];
   return (
@@ -56,11 +66,11 @@ const Stake = () => {
         </div>
         <div className={styles.appromaxContainer}>
           <p className={styles.appromax}>Staking APR</p>
-          <span className={styles.percentage}>6.72%</span>
+          <span className={styles.percentage}>9.75%</span>
         </div>
         <div className={styles.appromaxContainer}>
-          <p className={styles.appromax}>Max slashing</p>
-          <span className={styles.percentage}>30.00%</span>
+          <p className={styles.appromax}>Projected APR</p>
+          <span className={styles.percentage}>12%</span>
         </div>{" "}
         <div className={styles.appromaxContainer}>
           <p className={styles.appromax}>Wallet Balance</p>
@@ -68,7 +78,14 @@ const Stake = () => {
         </div>
         <div className={styles.appromaxContainer}>
           {" "}
-          <Button>Stake</Button>
+          <div
+            onClick={() => {
+              setStakeModal(true);
+              scrollToTop();
+            }}
+          >
+            <Button>Stake</Button>
+          </div>
         </div>
       </div>
       <div className={styles.componentswrapper}>
@@ -76,6 +93,7 @@ const Stake = () => {
           <StakeComponents {...el} key={i} />
         ))}
       </div>
+      {stakeModal && <StakeModal setPopup={setStakeModal} img={usdtIcon} />}
     </section>
   );
 };

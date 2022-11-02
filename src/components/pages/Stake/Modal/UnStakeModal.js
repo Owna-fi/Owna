@@ -1,9 +1,9 @@
 import React from "react";
 
-import Button from "../../../../Button/Button";
+import Button from "../../../Button/Button";
 import styles from "./StakeModal.module.css";
 
-const StakeModal = ({ setPopup, currency, img }) => {
+const UnStakeModal = ({ setPopup, img }) => {
   return (
     <>
       <section className={styles.popupWrapper}>
@@ -11,7 +11,7 @@ const StakeModal = ({ setPopup, currency, img }) => {
           <div className={styles.main}>
             <fieldset className={styles.fieldset}>
               <legend className={styles.legend}>
-                Amount of {currency} to convert and stake
+                Amount of USDT to unstake from Liquidity pool
               </legend>
               <input type="text" className={styles.input} />
               <div className={styles.buttonImage}>
@@ -32,7 +32,7 @@ const StakeModal = ({ setPopup, currency, img }) => {
               </div>
               <div onClick={() => setPopup(false)}>
                 {" "}
-                <Button>Convert & Stake</Button>
+                <Button>Unstake</Button>
               </div>
             </div>
           </div>
@@ -43,4 +43,4 @@ const StakeModal = ({ setPopup, currency, img }) => {
   );
 };
 
-export default StakeModal;
+export default UnStakeModal;

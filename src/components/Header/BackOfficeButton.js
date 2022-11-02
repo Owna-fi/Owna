@@ -14,6 +14,7 @@ const BackOfficeButton = ({ sidebar }) => {
     <div
       className={`${styles.backOffice} ${sidebar && styles.backOfficeMobile}`}
       onClick={() => setBackOfficeDropdown((prev) => !prev)}
+      onMouseEnter={() => setBackOfficeDropdown(true)}
     >
       <Button>BackOffice</Button>
       <div onClick={() => setBackOfficeDropdown((prev) => !prev)}>
@@ -21,6 +22,7 @@ const BackOfficeButton = ({ sidebar }) => {
           <div
             className={`${styles.backOfficeDropdown} ${styles.dropdown}`}
             onClick={() => setBackOfficeDropdown(false)}
+            onMouseLeave={() => setBackOfficeDropdown(false)}
           >
             {OfficeDropdown.map((el, i) => (
               <Link

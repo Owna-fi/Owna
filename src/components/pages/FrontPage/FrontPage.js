@@ -21,7 +21,8 @@ export const Feature = ({ step, title, description, image }) => {
 
       <div className="bg-white pt-12 flex-1">
         <div className="pt-2">
-          <div className="relative z-10 py-6 px-4">
+          <div className="relative  py-6 px-4">
+            {/* z-10 */}
             <span className="text-8xl text-center text-gray-200 font-bold absolute -top-16 lg:-top-9 inset-x-0">
               {step}
             </span>

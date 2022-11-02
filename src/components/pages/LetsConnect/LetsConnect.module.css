@@ -11,6 +11,12 @@
   min-height: 308px;
   padding: 15px 0;
 }
+.title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 100%;
+}
 .calender {
   border: 1px dashed #aeb3b7;
   border-radius: 5px;
@@ -31,6 +37,14 @@
     min-height: 600px;
   }
 }
+@media only screen and (max-width: 575px) {
+  .title {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+  }
+}
+
 @media only screen and (max-width: 520px) {
   .letsConnect {
     grid-template-columns: 1fr;
