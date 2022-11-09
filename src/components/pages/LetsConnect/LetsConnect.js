@@ -15,7 +15,6 @@ const LetsConnect = () => {
         l'observatoire 75006 Paris
       </p>
       {/* <p className="text">Book below if you need assitance</p> */}
-
       <div className={styles.letsConnect}>
         <InlineWidget url="https://calendly.com/ownafinance/30min" />
       </div>

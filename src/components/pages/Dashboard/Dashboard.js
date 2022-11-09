@@ -10,6 +10,7 @@ import Heading from "../../Heading/Heading";
 const Dashboard = () => {
   const [refundpopup, setRefundPopup] = useState(false);
   const [sellitpopup, setSellitPopup] = useState(false);
+
   return (
     <>
       <section className={` ${styles.dashboard}`}>
@@ -38,7 +39,11 @@ const Dashboard = () => {
               Sell item
             </Button>
           </div>
-          <div onClick={() => setRefundPopup(true)}>
+          <div
+            onClick={() => {
+              setRefundPopup(true);
+            }}
+          >
             <Button>Refund</Button>
           </div>
         </div>

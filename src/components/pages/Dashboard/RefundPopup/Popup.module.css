@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   width: 700px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -40,6 +40,7 @@
 .range {
   width: 90%;
   padding: 50px 0;
+  padding-top: 35px;
 }
 .minMax {
   width: 100%;
@@ -81,6 +82,66 @@
 .buttonContainer {
   margin-top: 30px;
 }
+.fieldset {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 2px 0;
+  padding-right: 8px;
+  width: 91%;
+  margin-top: 50px;
+}
+.legend {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #304050;
+  padding: 0px 4px;
+  position: absolute;
+  top: -15px;
+  left: 8px;
+  background: #fff;
+}
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 10px 12px;
+  display: block;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+.buttonImage {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+}
+.maxButton {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  background: #1682fe;
+  padding: 3px 6px;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+.maxImage {
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 850px) {
   .popup {
     width: 90%;
@@ -96,10 +157,24 @@
   .tagline {
     width: 100%;
   }
+  .buttonImage {
+    padding-right: 15px;
+  }
+  .maxButton {
+    font-size: 12px;
+
+    padding: 3px 4px;
+  }
+  .maxImage {
+    margin-left: 3px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
 }
 @media only screen and (max-width: 400px) {
   .popup {
-    padding: 20px 15px;
+    padding: 20px 10px;
     border-radius: 10px;
   }
 }

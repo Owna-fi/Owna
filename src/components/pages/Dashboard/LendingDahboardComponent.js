@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../Button/Button";
+// import Button from "../../Button/Button";
 import { FaPen } from "react-icons/fa";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import borrower from "../../../images/borrower.png";
@@ -23,6 +23,8 @@ const LendingDashboard = () => {
       text: "25 000 USDT ",
     },
   ];
+  const datas = "harekrisna";
+ 
   return (
     <div className={styles.wrapper}>
       <div

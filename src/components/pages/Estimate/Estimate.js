@@ -30,7 +30,7 @@ const Estimate = () => {
                 <span className="title">{estimateAmount} Dollars!</span>
               </p>
               <div className={styles.buttonContainer}>
-                <div onClick={() => navigate("/appoinment")}>
+                <div onClick={() => navigate("/connect")}>
                   <Button color="#323232" background="#E7E7E7">
                     I want it Back
                   </Button>

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useDataContext } from "../../../../context/context";
 import Button from "../../../Button/Button";
 import MakeOfferPopup from "../MakeOfferPopup/MakeOfferPopup";
 import styles from "./MarketPlaceComponents.module.css";
 
 const MarketPlaceComponents = ({ data }) => {
   const [popup, setPopup] = useState(false);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.dataWrapper}>
@@ -29,7 +31,12 @@ const MarketPlaceComponents = ({ data }) => {
           </div>
         ))}
       </div>{" "}
-      <div className={styles.buttonContainer} onClick={() => setPopup(true)}>
+      <div
+        className={styles.buttonContainer}
+        onClick={() => {
+          setPopup(true);
+        }}
+      >
         <Button>{data.button.text}</Button>
       </div>
       {popup && <MakeOfferPopup setPopup={setPopup} />}

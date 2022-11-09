@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../../../Input/Input";
 import Button from "../../../Button/Button";
 import styles from "./MakeOfferPopup.module.css";
@@ -107,6 +107,7 @@ const MakeOfferPopup = ({ setPopup }) => {
   const [periodVisible, setPeriodVisible] = useState(false);
   const [customPeriod, setCustomPeriod] = useState(false);
   const periods = [7, 14, 30, 60, 90];
+
   return (
     <>
       {" "}
@@ -140,16 +141,25 @@ const MakeOfferPopup = ({ setPopup }) => {
                         <div className={styles.categoyContainer}>
                           <div className={styles.dropdownAndIcon}>
                             {customPeriod ? (
-                              <input
-                                className={styles.periodInput}
-                                type="text"
-                                placeholder="Enter Period"
-                                value={values["period"]}
-                                onChange={onChange}
-                                name="period"
-                              />
+                              <div className={styles.myPeriodInput}>
+                                <input
+                                  className={styles.periodInput}
+                                  type="text"
+                                  placeholder="Enter Period"
+                                  value={values["period"]}
+                                  onChange={onChange}
+                                  name="period"
+                                  id="postfix"
+                                />
+                                <label className={styles.days}>days</label>
+                              </div>
                             ) : (
-                              <p className={styles.category}>
+                              <p
+                                className={`${styles.category} ${styles.periodCategory}`}
+                                onClick={() =>
+                                  setPeriodVisible((prev) => !prev)
+                                }
+                              >
                                 {period ? (
                                   `${period} Days`
                                 ) : (
@@ -194,7 +204,7 @@ const MakeOfferPopup = ({ setPopup }) => {
                                 className={styles.categoryItem}
                                 onClick={() => {
                                   setPeriodVisible((prev) => !prev);
-                                  setCustomPeriod((prev) => true);
+                                  setCustomPeriod(true);
                                 }}
                               >
                                 Custom Period

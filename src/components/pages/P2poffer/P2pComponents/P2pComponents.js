@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
+
 import Button from "../../../Button/Button";
 import Popup from "../BorrowPopUp/BorrowPopup";
 import styles from "./P2pComponents.module.css";
 const P2pComponents = ({ data }) => {
   const [popup, setPopup] = useState(false);
+
   return (
     <>
       <div className={styles.wrapper}>
@@ -23,7 +25,12 @@ const P2pComponents = ({ data }) => {
             </div>
           ))}
         </div>{" "}
-        <div className={styles.buttonContainer} onClick={() => setPopup(true)}>
+        <div
+          className={styles.buttonContainer}
+          onClick={() => {
+            setPopup(true);
+          }}
+        >
           <Button>Borrow</Button>
         </div>
       </div>

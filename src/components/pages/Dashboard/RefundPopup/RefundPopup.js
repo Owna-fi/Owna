@@ -1,33 +1,52 @@
 import React, { useState } from "react";
 import MyRange from "../../../Range/Range";
 import Button from "../../../Button/Button";
+import usdtIcon from "../../../../images/usdt.svg";
+
 import styles from "./Popup.module.css";
 
-const RefundPopup = ({ setPopup }) => {
-  const [value, setValue] = useState([5000]);
+const Popup = ({ setPopup }) => {
+  const [refundAmount, setRefundAmount] = useState([5000]);
+  const [refund, setRefund] = useState("");
+
   return (
     <>
       <section className={styles.popupWrapper}>
         <div className={`wrapper ${styles.popup}`}>
-          <h2 className={styles.title}>Selected</h2>
-          <p className={styles.tagline}>19 000 USDT</p>
+          <h2 className={styles.title}>Selected amount</h2>
+
+          <fieldset className={styles.fieldset}>
+            <legend className={styles.legend}>Select Amount</legend>
+            <input
+              type="number"
+              className={styles.input}
+              value={refund}
+              onChange={(e) => setRefund(e.target.value)}
+            />
+            <div className={styles.buttonImage}>
+              <button className={styles.maxButton}>max</button>
+              <img src={usdtIcon} alt="#" className={styles.maxImage} />
+            </div>
+          </fieldset>
           <div className={styles.range}>
             <div className={styles.minMax}>
               <p className={styles.amount}>
                 5000 <span className={styles.text}>min</span>
               </p>{" "}
               <p className={styles.amount}>
-                {value} <span className={styles.text}>max</span>
+                {refundAmount} <span className={styles.text}>max</span>
               </p>
             </div>
-            <MyRange value={value} setValue={setValue} />
+            <MyRange value={refundAmount} setValue={setRefundAmount} />
           </div>
           <h2 className={styles.title}>Daily interest: 7,29 USDT</h2>
           <div
             className={styles.buttonContainer}
-            onClick={() => setPopup(false)}
+            onClick={() => {
+              setPopup(false);
+            }}
           >
-            <Button>Refund</Button>
+            <Button>Borrow</Button>
           </div>
         </div>
       </section>
@@ -37,4 +56,4 @@ const RefundPopup = ({ setPopup }) => {
   );
 };
 
-export default RefundPopup;
+export default Popup;
